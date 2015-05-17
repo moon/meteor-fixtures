@@ -88,6 +88,16 @@ Fixture `id`'s only have to be unique to a `collection`.
 
 
 
+### Fixtures.ids(collection)
+
+Returns an array of fixture `id` strings for a given `collection`.
+
+| Parameter  | Type              | Description
+|:----------:|:-----------------:|------------
+|`collection`| `Mongo.Collection`| Collection to get the `id` values of
+
+
+
 ### Fixtures.get(collection, id)
 
 Returns a document from the `collection` for the given `id`.

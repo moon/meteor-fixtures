@@ -11,6 +11,21 @@ var store = new Mongo.Collection('fixtures');
 Fixtures = {
 
   /**
+   * Returns an array of fixture `id` strings for a given `collection`.
+   * @param {Mongo.Collection} collection Collection to get the `id` values of.
+   * @return {Array.<String>} Array of fixture `id` strings.
+   */
+  ids: function(collection) {
+
+    var cursor = store.find({
+      collection: collection._name
+    }, { fields: { id: 1 } });
+
+    return Utils.pluck(cursor, 'id');
+
+  },
+
+  /**
    * Returns a document from the `collection` for the given `id`.
    * If no `id` is provided, returns a cursor to all fixture documents in the `collection`.
    * @param {Mongo.Collection} collection Collection to get the document from.
