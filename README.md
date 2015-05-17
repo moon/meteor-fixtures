@@ -1,6 +1,6 @@
 # Meteor Fixtures
 
-> Serverside fixtures manager for Meteor
+**Serverside fixtures manager for Meteor**
 
 
 
