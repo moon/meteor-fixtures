@@ -94,10 +94,12 @@ Returns a document from the `collection` for the given `id`.
 
 If no document is found, returns `undefined`.
 
+If no `id` is provided, returns a cursor to all fixture documents in the `collection`.
+
 | Parameter  | Type              | Description
 |:----------:|:-----------------:|------------
 |`collection`| `Mongo.Collection`| Collection to get the document from
-|`id`        | `String`          | Unique identifier for the fixture document
+|`id`        | `String[optional]`| Unique identifier for the fixture document
 
 
 

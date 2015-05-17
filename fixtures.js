@@ -12,17 +12,30 @@ Fixtures = {
 
   /**
    * Returns a document from the `collection` for the given `id`.
+   * If no `id` is provided, returns a cursor to all fixture documents in the `collection`.
    * @param {Mongo.Collection} collection Collection to get the document from.
-   * @param {String} id Unique identifier for the fixture document.
+   * @param {String} id Unique identifier for the fixture document. Optional.
    * @return {Object} Document.
    */
   get: function(collection, id) {
 
-    var fixture = store.findOne({
-      collection: collection._name, id: id
-    }, { fields: { _id: 1 } });
+    if (_.isString(id)) {
 
-    if (fixture) { return collection.findOne(fixture._id); }
+      var fixture = store.findOne({
+        collection: collection._name, id: id
+      }, { fields: { _id: 1 } });
+
+      if (fixture) { return collection.findOne(fixture._id); }
+
+    } else {
+
+      var cursor = store.find({
+        collection: collection._name
+      }, { fields: { _id: 1 } });
+
+      return collection.find({ _id: { $in: Utils.pluck(cursor, '_id') }});
+
+    }
 
   },
 

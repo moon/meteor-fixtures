@@ -5,7 +5,7 @@
 Package.describe({
   name: 'moonco:fixtures',
   summary: 'Serverside fixtures manager',
-  version: '0.1.4',
+  version: '0.1.5',
   git: 'https://github.com/moon/meteor-fixtures'
 });
 
