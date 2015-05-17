@@ -4,8 +4,8 @@
 
 Package.describe({
   name: 'moonco:fixtures',
-  summary: 'Moon fixtures',
-  version: '0.0.1',
+  summary: 'Moon fixtures manager',
+  version: '0.1.0',
   git: 'https://github.com/moon/meteor-fixtures'
 });
 
@@ -29,13 +29,8 @@ Package.onUse(function(api) {
 
   api.use([
 
-    // Meteor Packages
     'underscore',
-    'mongo',
-
-    // Thirdparty Packages
-    'matb33:collection-hooks@0.7.13',
-    'jparker:crypto-md5@0.1.1'
+    'mongo'
 
   ], 'server');
 
@@ -45,7 +40,9 @@ Package.onUse(function(api) {
 
   api.addFiles([
 
-    'index.js'
+    'utils.js',
+    'counter.js',
+    'fixtures.js'
 
   ], 'server');
 
