@@ -24,7 +24,7 @@ Fixtures.insert(Authors, 'harper_lee', {
   name: 'Harper Lee'
 });
 
-// Convenience method that wraps the Fixtures API with collection
+// Convenience method that wraps the Fixtures API with a collection
 Fixtures.create(Books, function(api) {
 
   var janeAusten = Fixtures.get(Authors, 'jane_austen');
@@ -88,7 +88,7 @@ Fixture `id`'s only have to be unique to a `collection`.
 
 
 
-### `Fixtures.get(collection, id)`
+### Fixtures.get(collection, id)
 
 Returns a document from the `collection` for the given `id`.
 
@@ -101,7 +101,7 @@ If no document is found, returns `undefined`.
 
 
 
-### `Fixtures.insert(collection, id, data, proxy)`
+### Fixtures.insert(collection, id, data, proxy)
 
 Inserts a document into the `collection` for the given `id`, passing it `data` and returns the new document `_id`.
 
@@ -130,7 +130,7 @@ Fixtures.insert(Meteor.users, 'joe', {
 
 
 
-### `Fixtures.update(collection, id, data, proxy)`
+### Fixtures.update(collection, id, data, proxy)
 
 Updates a document in the `collection` for the given `id`, passing it `data` and returns the number of affected documents.
 
@@ -147,7 +147,7 @@ The `proxy` method is called with the document `_id` and `data` object and shoul
 
 
 
-### `Fixtures.remove(collection, id, proxy)`
+### Fixtures.remove(collection, id, proxy)
 
 Removes a document from the `collection` for the given `id` and returns the number of removed documents.
 
@@ -163,7 +163,7 @@ The `proxy` method is called with the document `_id` and should return the numbe
 
 
 
-### `Fixtures.flush(collection)`
+### Fixtures.flush(collection)
 
 Removes __all__ fixture documents from the `collection` and returns the number of removed documents.
 
@@ -173,7 +173,7 @@ Removes __all__ fixture documents from the `collection` and returns the number o
 
 
 
-### `Fixtures.count(collection)`
+### Fixtures.count(collection)
 
 Returns the number of fixture documents in the `collection`.
 
@@ -183,7 +183,7 @@ Returns the number of fixture documents in the `collection`.
 
 
 
-### `Fixtures.create(collection, callback, proxies)`
+### Fixtures.create(collection, callback, proxies)
 
 Creates a wrapper around the `Fixture API` for the given `collection` and passes it to the `callback` as an `api` object.
 
