@@ -80,7 +80,7 @@ Fixtures = {
 
         Counter.added(collection, 1);
 
-        return id;
+        return _id;
 
       }
 
